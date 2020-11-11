@@ -1,4 +1,4 @@
-import { message, warn, danger } from 'danger'
+import { message, warn, markdown, danger } from 'danger'
 const xml = require("xml-parse");
 const fs = require('fs');
 

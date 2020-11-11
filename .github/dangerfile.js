@@ -20,7 +20,7 @@ parseString(xml, function (err, result) {
             }
         });
 
-        type(`problem<sup>${++counter}</sup>`);
+        type(`${problem}<sup>${++counter}</sup>`);
         markdown(`> <sup>${counter}</sup>${solution}\n>${targetText}`);
     });
 });

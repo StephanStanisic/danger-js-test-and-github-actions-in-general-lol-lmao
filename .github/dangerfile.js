@@ -4,7 +4,7 @@ const fs = require('fs');
 
 
 var x = fs.readFileSync('.github/artifacts/result.xml');
-var parsedXML = xml.parse(x.toString());
+/*var parsedXML = xml.parse(x.toString());
 var results = parsedXML.find(elem => elem.tagName == "results")
 console.log(results);
 results.childNodes.forEach(result => {
@@ -24,7 +24,7 @@ results.childNodes.forEach(result => {
     });
 
     type(problem + solution + "\n" + targetText);
-})
+})*/
 
 
 var bigPRThreshold = 600;

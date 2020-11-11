@@ -24,6 +24,7 @@ jobs:
         run: |
             npm install -g yarn
             yarn add danger --dev
+            yarn add xml-parse
       - name: Install gendarme
         run: |
             wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb
@@ -34,7 +35,7 @@ jobs:
             FILES=$(find src -mindepth 1 -maxdepth 1 -type d | while read file; do find $file/bin -name *.dll; done)
             gendarme --config .github/rules.xml --xml .github/artifacts/result.xml --html .github/artifacts/result.html $FILES || true
       - name: Danger
-        run: npm i xml-parse; npm i -D danger; npm run danger ci --dangerfile .github/dangerfile.js
+        run: yarn danger ci --dangerfile .github/dangerfile.js
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifacts

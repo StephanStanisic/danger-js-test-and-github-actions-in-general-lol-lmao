@@ -1,14 +1,14 @@
 name: Gendarme
 
 # Run this workflow every time a new commit pushed to your repository
-on: push
+on: pull_request
 
 jobs:
   # Set the job key. The key is displayed as the job name
   # when a job name is not provided
-  gendarme:
+  build:
     # Name the Job
-    name: Lint code base
+    name: Danger
     # Set the type of machine to run on
     runs-on: ubuntu-latest
 
@@ -16,8 +16,14 @@ jobs:
       # Checks out a copy of your repository on the ubuntu-latest machine
       - name: Checkout code
         uses: actions/checkout@v2
-
-      # Runs the Super-Linter action
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+            node-version: 10.x
+      - name: install danger
+        run: |
+            npm install -g yarn
+            yarn add danger --dev
       - name: Install gendarme
         run: |
             wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb
@@ -27,14 +33,12 @@ jobs:
             mkdir .github/artifacts
             FILES=$(find src -mindepth 1 -maxdepth 1 -type d | while read file; do find $file/bin -name *.dll; done)
             gendarme --config .github/rules.xml --xml .github/artifacts/result.xml --html .github/artifacts/result.html $FILES || true
-            echo "Done!"
+      - name: Danger
+        run: yarn danger ci --dangerfile .github/dangerfile.js
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: code-coverage-report.html
-          path: .github/artifacts/result.html
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: code-coverage-report.xml
-          path: .github/artifacts/result.xml
+          name: artifacts
+          path: .github/artifacts

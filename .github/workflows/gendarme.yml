@@ -24,7 +24,7 @@ jobs:
         run: |
             npm install -g yarn
             yarn add danger --dev
-            yarn add fast-xml-parser
+            yarn add xml2js
       - name: Install gendarme
         run: |
             wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb

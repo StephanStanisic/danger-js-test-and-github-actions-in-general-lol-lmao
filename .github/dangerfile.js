@@ -1,10 +1,10 @@
 import { message, warn, markdown, danger } from 'danger'
-const xml = require("xml-parse");
+var parser = require('fast-xml-parser');
 const fs = require('fs');
 
 
 var x = fs.readFileSync('.github/artifacts/result.xml');
-var parsedXML = xml.parse(x.toString());
+var parsedXML = parser.parse(x.toString());
 /*var results = parsedXML.find(elem => elem.tagName == "results")
 console.log(results);
 results.childNodes.forEach(result => {

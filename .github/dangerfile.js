@@ -2,6 +2,7 @@ import { message, warn, danger } from 'danger'
 const xml = require("xml-parse");
 const fs = require('fs');
 
+/*
 var x = fs.readFileSync('.github/artifacts/result.xml');
 var parsedXML = xml.parse(x.toString());
 var results = parsedXML.find(elem => elem.tagName == "results")
@@ -21,6 +22,7 @@ results.childNodes.forEach(result => {
 
     type(problem + solution + "\n" + targetText);
 })
+*/
 
 var bigPRThreshold = 600;
 if (danger.github.pr.additions + danger.github.pr.deletions > bigPRThreshold) {

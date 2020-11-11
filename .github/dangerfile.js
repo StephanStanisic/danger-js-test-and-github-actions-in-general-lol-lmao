@@ -5,6 +5,7 @@ const fs = require('fs');
 
 var x = fs.readFileSync('.github/artifacts/result.xml');
 var parsedXML = parser.parse(x.toString());
+console.log(parsedXML);
 /*var results = parsedXML.find(elem => elem.tagName == "results")
 console.log(results);
 results.childNodes.forEach(result => {

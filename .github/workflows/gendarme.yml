@@ -22,8 +22,7 @@ jobs:
             node-version: 10.x
       - name: Install dependencies
         run: |
-            npm install -g yarn
-            npm install xml-parse
+            npm install -g yarn xml-parse
             yarn add danger --dev
       - name: Install gendarme
         run: |

@@ -21,5 +21,7 @@ jobs:
       - name: Install gendarme
         run: |
             wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb
-            sudo apt update && sudo apt install -y dotnet-sdk-2.1
-
+            sudo apt update && sudo apt install -y dotnet-sdk-2.1 gendarme
+            mkdir .github/artifacts
+            FILES=$(find src -mindepth 1 -maxdepth 1 -type d | while read file; do find $file/bin -name *.dll; done)
+            gendarme --config .github/rules.xml --xml .github/artifacts/result.xml $FILES

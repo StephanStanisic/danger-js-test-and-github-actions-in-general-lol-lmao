@@ -18,5 +18,6 @@ jobs:
             yarn add danger --dev
           - name: Danger
             run: yarn danger ci
-            env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            env: 
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
  

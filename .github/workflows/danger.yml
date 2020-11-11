@@ -16,7 +16,7 @@ jobs:
           - name: yarn install
             run: yarn add danger --dev
           - name: Danger
-            run: yarn danger ci .github/dangerfile.js
+            run: yarn danger ci --dangerfile .github/dangerfile.js
             env: 
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
  

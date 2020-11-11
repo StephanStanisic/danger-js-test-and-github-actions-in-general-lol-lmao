@@ -22,7 +22,6 @@ jobs:
             node-version: 10.x
       - name: Install dependencies
         run: |
-            npm install xml-parse
             npm install -g yarn
             yarn add danger --dev
       - name: Install gendarme
@@ -35,7 +34,7 @@ jobs:
             FILES=$(find src -mindepth 1 -maxdepth 1 -type d | while read file; do find $file/bin -name *.dll; done)
             gendarme --config .github/rules.xml --xml .github/artifacts/result.xml --html .github/artifacts/result.html $FILES || true
       - name: Danger
-        run: yarn danger ci --dangerfile .github/dangerfile.js
+        run: npm i xml-parse; yarn danger ci --dangerfile .github/dangerfile.js
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifacts

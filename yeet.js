@@ -1,11 +1,12 @@
-const xml = require("xml-parse");
 const fs = require('fs');
 
-var x = fs.readFileSync('.github/artifacts/result.xml');
-var parsedXML = xml.parse(x.toString());
-var results = parsedXML.find(elem => elem.tagName == "results")
+var x = fs.readFileSync('test.xml');
+var parsedXML = (new DOMParser()).parseFromString(x, 'text/xml');
+var results = parsedXML.getElementsByTagName("results")[0]
 results.childNodes.forEach(result => {
-    if(result.type != "element") return;
+    console.log(result);
+    return;
+
     let problem = result.childNodes.find(x => x.tagName == "problem").innerXML;
     let solution = result.childNodes.find(x => x.tagName == "solution").innerXML;
     let target = result.childNodes.find(x => x.tagName == "target").childNodes.filter(x => x.type == "element");

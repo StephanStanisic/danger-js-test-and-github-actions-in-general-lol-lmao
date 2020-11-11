@@ -20,9 +20,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
             node-version: 10.x
-      - name: install danger
+      - name: Install dependencies
         run: |
             npm install -g yarn
+            npm install xml-parse
             yarn add danger --dev
       - name: Install gendarme
         run: |

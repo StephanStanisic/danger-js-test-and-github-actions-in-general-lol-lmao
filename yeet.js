@@ -1,4 +1,3 @@
-import { message, warn, danger } from 'danger'
 const xml = require("xml-parse");
 const fs = require('fs');
 
@@ -11,8 +10,8 @@ results.childNodes.forEach(result => {
     let solution = result.childNodes.find(x => x.tagName == "solution").innerXML;
     let target = result.childNodes.find(x => x.tagName == "target").childNodes.filter(x => x.type == "element");
     let targetText = target.map(x => x.attributes.Location + ": " + x.innerXML ).join("\n");
-    let name = result.attributes.Name;
-
+    let name = result.attributes.Name; 
+    
     let type = message;
     target.forEach(problem => {
         if(problem.attributes.Severity == "High")
@@ -21,4 +20,3 @@ results.childNodes.forEach(result => {
 
     type(problem + solution + "\n" + targetText);
 })
-

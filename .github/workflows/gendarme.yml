@@ -26,7 +26,7 @@ jobs:
         run: |
             mkdir .github/artifacts
             FILES=$(find src -mindepth 1 -maxdepth 1 -type d | while read file; do find $file/bin -name *.dll; done)
-            gendarme --config .github/rules.xml --xml .github/artifacts/result.xml --html .github/artifacts/result.html $FILES
+            gendarme --config .github/rules.xml --xml .github/artifacts/result.xml --html .github/artifacts/result.html $FILES || true
             echo "Done!"
       - name: Upload artifacts
         uses: actions/upload-artifact@v2

@@ -1,0 +1,13 @@
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/bin/Debug/netcoreapp3.1/testapp
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/bin/Debug/netcoreapp3.1/testapp.deps.json
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/bin/Debug/netcoreapp3.1/testapp.runtimeconfig.json
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/bin/Debug/netcoreapp3.1/testapp.runtimeconfig.dev.json
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/bin/Debug/netcoreapp3.1/testapp.dll
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/bin/Debug/netcoreapp3.1/testapp.pdb
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/obj/Debug/netcoreapp3.1/testapp.csprojAssemblyReference.cache
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/obj/Debug/netcoreapp3.1/testapp.AssemblyInfoInputs.cache
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/obj/Debug/netcoreapp3.1/testapp.AssemblyInfo.cs
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/obj/Debug/netcoreapp3.1/testapp.csproj.CoreCompileInputs.cache
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/obj/Debug/netcoreapp3.1/testapp.dll
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/obj/Debug/netcoreapp3.1/testapp.pdb
+/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/obj/Debug/netcoreapp3.1/testapp.genruntimeconfig.cache

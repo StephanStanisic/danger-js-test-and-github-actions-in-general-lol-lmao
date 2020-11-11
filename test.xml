@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<gendarme-output date="11/11/2020 12:30:47">
+  <files>
+    <file Name="testapp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">/home/stephan/Projects/danger-js-test-and-github-actions-in-general-lol-lmao/src/testapp/bin/Debug/netcoreapp3.1/testapp.dll</file>
+  </files>
+  <results>
+    <rule Name="AvoidUnusedParametersRule" Uri="https://github.com/spouliot/gendarme/wiki/Gendarme.Rules.Performance.AvoidUnusedParametersRule(2.10)">
+      <problem>The method contains one or more unused parameters.</problem>
+      <solution>You should remove or use the unused parameters.</solution>
+      <target Name="System.Void testapp.Program::Main(System.String[])" Assembly="testapp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <defect Severity="Medium" Confidence="Normal" Location="args" Source="">Parameter 'args' of type 'System.String[]' is never used in the method.</defect>
+      </target>
+    </rule>
+    <rule Name="ConsiderUsingStaticTypeRule" Uri="https://github.com/spouliot/gendarme/wiki/Gendarme.Rules.Design.ConsiderUsingStaticTypeRule(2.10)">
+      <problem>This type contains only static fields and methods and should be static.</problem>
+      <solution>Change this type into a static (or sealed for 1.x) type gain clarity and better error reporting.</solution>
+      <target Name="testapp.Program" Assembly="testapp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <defect Severity="Medium" Confidence="High" Location="testapp.Program" Source=""></defect>
+      </target>
+    </rule>
+    <rule Name="UseCorrectCasingRule" Uri="https://github.com/spouliot/gendarme/wiki/Gendarme.Rules.Naming.UseCorrectCasingRule(2.10)">
+      <problem>This identifier (namespace, type, or method) violates the .NET naming conventions.</problem>
+      <solution>Change the namespace, type, or method name to be pascal-cased (like MyClass) and parameter names to be camel-cased (like myParameter).</solution>
+      <target Name="testapp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Assembly="testapp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <defect Severity="Medium" Confidence="High" Location="testapp" Source="">Namespaces longer than two characters should be pascal cased. Rename namespace 'testapp' to 'Testapp'</defect>
+      </target>
+    </rule>
+  </results>
+</gendarme-output>

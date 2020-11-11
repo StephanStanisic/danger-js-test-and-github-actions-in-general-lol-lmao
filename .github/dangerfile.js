@@ -4,8 +4,8 @@ const fs = require('fs');
 
 
 var x = fs.readFileSync('.github/artifacts/result.xml');
-/*var parsedXML = xml.parse(x.toString());
-var results = parsedXML.find(elem => elem.tagName == "results")
+var parsedXML = xml.parse(x.toString());
+/*var results = parsedXML.find(elem => elem.tagName == "results")
 console.log(results);
 results.childNodes.forEach(result => {
     console.log("result", result);
